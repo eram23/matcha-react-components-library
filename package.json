@@ -1,0 +1,20 @@
+{
+  "name": "Scrim-s0ds0dbpct",
+  "description": "https://v2.scrimba.com/s0ds0dbpct",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*",
+    "vite": "^5.4.3"
+  }
+}
