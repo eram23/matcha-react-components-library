@@ -7,10 +7,12 @@
 :root {
     --matcha-primary: #5B9F27;
     --matcha-secondary: #72A34D;
+    --matcha-tertiary: #A5C38F;
     --matcha-light: #ECFFE3;
-    --matcha-dark: #2A3721;
-    --matcha-grey: #88A374;
     --matcha-lightgrey: #C1CCB9;
+    --matcha-grey: #88A374;
+    --matcha-less-dark: #3F5431;
+    --matcha-dark: #2A3721;
 }
 
 body {
@@ -26,16 +28,35 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    max-width: 1100px;
     margin: 0 auto;
     padding: 0 1rem;
     /* border: 1px dashed var(--matcha-lightgrey); */
+}
+
+
+.dark {
+    background-color: var(--matcha-dark);
+    color: var(--matcha-light);
+    width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 h1,
 h2 {
     color: var(--matcha-dark);
     padding: 1em 0;
+}
+
+.header-dark {
+    color: var(--matcha-light);
+}
+
+p .dark {
+    color: var(--matcha-tertiary);
 }
 
 .component-container {
@@ -48,6 +69,16 @@ h2 {
 }
 
 /****** BUTTON ******/
+.toggle-theme-btn {
+    background-color: var(--matcha-light);
+    color: var(--matcha-secondary);
+    border: 1px solid var(--matcha-secondary);
+    border-radius: 5px;
+    max-width: fit-content;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+}
+
 .btn-container {
     display: flex;
     flex-direction: column;
@@ -97,6 +128,17 @@ h2 {
     top: 0; UNCOMMENT TO ALLOW NAV TO STICK TO TOP*/ 
 }
 
+.matcha-nav-dark {
+    background-color: var(--matcha-less-dark);
+    color: var(--matcha-tertiary);
+    width: 100%;
+    padding: 1.25em 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
 .logo {
     font-size: 1.5em;
     font-weight: bold;
@@ -115,7 +157,7 @@ h2 {
     font-weight: 700;
 }
 
-.dropdown-nav {
+.dropdown-nav-light {
     position: absolute;
     right: -10;
     top: auto;
@@ -123,6 +165,25 @@ h2 {
     height: 105%;
     width: 70%;
     background-color: var(--matcha-secondary);
+    box-shadow: 0px 3px 15px black;
+    padding: 3em 1em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    justify-content: center;
+    z-index: 1;
+}
+
+.dropdown-nav-dark {
+    position: absolute;
+    right: -10;
+    top: auto;
+    bottom: auto;
+    height: 105%;
+    width: 70%;
+    background-color: var(--matcha-less-dark);
+    color: var(--matcha-tertiary);
     box-shadow: 0px 3px 15px black;
     padding: 3em 1em;
     margin: 0;
