@@ -5,7 +5,7 @@ export default function FooterPages({children, className}) {
     const allClasses = classnames(className)
 
     return (
-        <div>
+        <div className="footer-pages">
             <p>Relevant Pages</p>
             <ul className={allClasses}>
                 {children}

@@ -4,8 +4,8 @@ export default function TestimonialBody({children}) {
     
     
     return(
-        <div className="matcha-testimonial-body">
+        <p className="matcha-testimonial-body">
             {children}
-        </div>
+        </p>
     )
 }

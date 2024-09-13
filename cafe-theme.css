@@ -16,7 +16,6 @@
 }
 
 body {
-    background-color: white;
     color: var(--matcha-secondary);
     /* height: 100vh; */
     font-family: Inter;
@@ -30,13 +29,14 @@ main {
     flex-direction: column;
     margin: 0 auto;
     padding: 0 1rem;
+    background-color: var(--matcha-light);
     /* border: 1px dashed var(--matcha-lightgrey); */
 }
 
 
 .dark {
     background-color: var(--matcha-dark);
-    color: var(--matcha-light);
+    color: var(--matcha-tertiary);
     width: 100%;
 }
 
@@ -47,7 +47,7 @@ main {
 
 h1,
 h2 {
-    color: var(--matcha-dark);
+    color: var(--matcha-less-dark);
     padding: 1em 0;
 }
 
@@ -68,8 +68,8 @@ p .dark {
     /* margin-bottom: 1em; */
 }
 
-/****** BUTTON ******/
-.toggle-theme-btn {
+/****** TOGGLE BUTTON ******/
+.toggle-btn {
     background-color: var(--matcha-light);
     color: var(--matcha-secondary);
     border: 1px solid var(--matcha-secondary);
@@ -77,8 +77,21 @@ p .dark {
     max-width: fit-content;
     padding: .5em 1em;
     margin-bottom: 1em;
+    cursor: pointer;
 }
 
+.toggle-btn-dark {
+    background-color: var(--matcha-less-dark);
+    color: var(--matcha-light);
+    border: 1px solid var(--matcha-light);
+    border-radius: 5px;
+    max-width: fit-content;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+/****** BUTTONS ******/
 .btn-container {
     display: flex;
     flex-direction: column;
@@ -87,7 +100,8 @@ p .dark {
 .matcha-btn {
     background-color: var(--matcha-primary);
     color: var(--matcha-light);
-    border: none;
+    /* outline: 3px solid var(--matcha-dark); */
+    border: 3px solid var(--matcha-primary);
     padding: 1.25em 2em;
     cursor: pointer;
     font-size: 1.25em;
@@ -101,9 +115,20 @@ p .dark {
     margin-bottom: 1em;
 }
 
+.matcha-btn:hover {
+    background-color: #86c457;
+    border: 3px solid var(--matcha-primary);
+}
+
 .secondary {
-    background-color: var(--matcha-light);
+    background-color: transparent;
     color: var(--matcha-primary);
+    outline: 3px solid var(--matcha-primary);
+    border: none;
+}
+
+.secondary:hover {
+    color: var(--matcha-light);
     border: none;
 }
 
@@ -112,6 +137,12 @@ p .dark {
     color: var(--matcha-grey);
     border: none; 
     cursor: not-allowed;
+}
+
+.disabled:hover {
+    background-color: var(--matcha-lightgrey);
+    color: var(--matcha-grey);
+    border: none; 
 }
 
 /****** NAV ******/
@@ -131,12 +162,6 @@ p .dark {
 .matcha-nav-dark {
     background-color: var(--matcha-less-dark);
     color: var(--matcha-tertiary);
-    width: 100%;
-    padding: 1.25em 2.5em;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
 }
 
 .logo {
@@ -157,7 +182,7 @@ p .dark {
     font-weight: 700;
 }
 
-.dropdown-nav-light {
+.dropdown-nav {
     position: absolute;
     right: -10;
     top: auto;
@@ -197,8 +222,8 @@ p .dark {
 .fa-xmark {
     font-size: 1.5em;
     font-weight: bold;
-    color: white;
-    margin-left: 40px;
+    color: var(--matcha-light);
+    margin-left: 0px;
     margin-bottom: 2em;
 }
 
@@ -222,11 +247,13 @@ p .dark {
     color: white;
 }
 
+
 /****** CARD ******/
 .matcha-card {
     max-width: 650px;
-    background-color: var(--matcha-light);
-    padding: 1.5em;
+    background-color: var(--matcha-secondary);
+    color: var(--matcha-light);
+    padding: 2em 1.5em;
     border-radius: 10px;
     text-align: center;
     border: 1px solid var(--matcha-secondary);
@@ -246,21 +273,36 @@ p .dark {
     box-shadow: 0px 0px 15px #171717;
 }
 
-.matcha-card-title {
-    color: var(--matcha-dark);
+.matcha-card h3 {
+    color: var(--matcha-light);
+    margin-bottom: .5em;
 }
 
-.matcha-card-body {
+/* .matcha-card p {
     color: var(--matcha-secondary);
+} */
+
+.card-dark {
+    background-color: var(--matcha-less-dark);
 }
+
+.card-dark h3 {
+    color: var(--matcha-light);
+}
+
+.card-dark p {
+    color: var(--matcha-tertiary);
+}
+
 
 /****** TESTIMONIAL ******/
 .testimonial {
     width: 100%;
     padding: 3em;
-    background-color: var(--matcha-light);
+    background-color: var(--matcha-secondary);
+    color: var(--matcha-light);
     border-radius: 10px;
-    border: 1px solid var(--matcha-secondary);
+    border: 1px solid var(--matcha-tertiary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,6 +326,20 @@ p .dark {
     color: var(--matcha-dark);
 }
 
+.testimonial-dark {
+    background-color: var(--matcha-less-dark);
+}
+
+.testimonial-dark p {
+    color: var(--matcha-tertiary);
+}
+
+.testimonial-dark .testimonial-author {
+    color: var(--matcha-light);
+}
+.testimonial-dark .matcha-testimonial-source {
+    color: var(--matcha-tertiary);
+} 
 /****** BANNER ******/
 .banner {
     max-width: 800px;
@@ -310,6 +366,11 @@ p .dark {
     color: var(--matcha-secondary);
 }
 
+.banner-dark {
+    background-color: var(--matcha-less-dark);
+    color: var(--matcha-tertiary);
+}
+
 /****** FOOTER ******/
 footer {
     box-sizing: content-box;
@@ -333,6 +394,30 @@ footer {
     height: 100px;
     display: block;
     border: 1px solid white;
+}
+
+.footer-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.footer-logo img {
+    max-width: 30px;
+    margin-right: .25em;
+}
+
+.footer-pages p {
+    font-weight: 700;
+}
+
+.footer-pages li {
+    list-style: none;
+    margin: .5em 0;
+    font-weight: 100;
+}
+
+.footer-dark {
+    background-color: var(--matcha-less-dark);
 }
 @media (min-width: 600px) {
     .btn-container {

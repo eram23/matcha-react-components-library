@@ -17,10 +17,9 @@ function App() {
 
   function toggleTheme() {
     setTheme(theme === 'dark'? 'light' : 'dark')
-    console.log(theme)
   }
   const headerClass = theme === 'dark' ? 'header-dark' : null
-
+  const toggleBtn = theme === 'dark' ? 'toggle-btn-dark' : 'toggle-btn'
   // allClasses = classNames()
   return (
     <ThemeContext.Provider value={theme}>
@@ -28,19 +27,15 @@ function App() {
       <main className={theme}>
         <div className="container">
           <h1 className={headerClass}>Matcha Component Library 🍵</h1>
-          <button className="toggle-theme-btn" onClick={toggleTheme}>Light</button>
+
+          <button className={toggleBtn} onClick={toggleTheme}>{theme === 'dark' ? 'Dark' : 'Light'}</button>
+
           <p className={theme}>React component library for all the matcha lovers who want to add some 
           earthy flavor to their project. This library consists of buttons, cards, banners,
           and testimonials.
           </p>
+          <span className=""></span>
           
-          <h2 className={headerClass}>Matcha Buttons</h2>
-          <div className="component-container btn-container">
-            <Button className="matcha-btn">Primary Button</Button>
-            <Button className="matcha-btn secondary">Secondary Button</Button>
-            <Button className="matcha-btn disabled">Disabled Button</Button>
-          </div>
-
           <h2 className={headerClass}>Matcha Nav</h2>
           <div className="component-container">
             <NavMenu>
@@ -50,6 +45,14 @@ function App() {
               </NavDropDown>
             </NavMenu>
           </div>
+          
+          <h2 className={headerClass}>Matcha Buttons</h2>
+          <div className="component-container btn-container">
+            <Button className="matcha-btn">Primary Button</Button>
+            <Button className="matcha-btn secondary">Secondary Button</Button>
+            <Button className="matcha-btn disabled">Disabled Button</Button>
+          </div>
+
           
           <h2 className={headerClass}>Matcha Card</h2>
           <div className="component-container">
@@ -63,10 +66,9 @@ function App() {
           <h2 className={headerClass}>Matcha Testimonial</h2>
           <div className="component-container">
             <Testimonial>
-              <Testimonial.Logo >
-                <img src="/images/logo-ex.png" />
-              </Testimonial.Logo>
-              <Testimonial.Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.
+              <Testimonial.Logo />
+              <Testimonial.Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. 
+                Numquam corrupti in laborum sed rerum et corporis.
               </Testimonial.Body>
               <Testimonial.Source><span className="testimonial-author">May Andersons / </span>Workcation, CTO</Testimonial.Source>
             </Testimonial>
@@ -74,7 +76,7 @@ function App() {
 
           <h2 className={headerClass}>Matcha Banners</h2>
           <div className="component-container">
-            <Banner className="banner">
+            <Banner>
               <img src="./images/success.svg" />
               <Banner.Content>
                 <Banner.Title>Congratulations</Banner.Title>
@@ -82,7 +84,7 @@ function App() {
               </Banner.Content>
             </Banner>
             
-            <Banner className="banner neutral">
+            <Banner className="neutral">
               <img src="./images/warning.svg" />
               <Banner.Content>
                 <Banner.Title>Attention</Banner.Title>
@@ -90,7 +92,7 @@ function App() {
               </Banner.Content>
             </Banner>
             
-            <Banner className="banner neutral">
+            <Banner className="neutral">
               <img src="./images/neutral.svg" />
               <Banner.Content>
                 <Banner.Title>Update Available</Banner.Title>
@@ -106,7 +108,7 @@ function App() {
         <Footer>
           <Footer.Content className="footer-content">
             <Footer.Logo>
-              <span className="logo">
+              <span className="footer-logo">
                     <img src="./images/logo-ex-2.svg"/>
                     logo
               </span>

@@ -3,6 +3,7 @@ import useToggle from './useToggle'
 import NavDropDown from './NavDropDown'
 import NavItem from './NavItem'
 import { ThemeContext } from '/index.jsx'
+import classNames from 'classnames'
 
 
 
@@ -14,11 +15,17 @@ export default function NavMenu({children}) {
         setOpen(prevValue => !prevValue)
     }
 
-    const matchaNavTheme = theme === 'dark' ? 'matcha-nav-dark' : 'matcha-nav'
-    const dropdownNavTheme = 'dropdown-nav-' + theme
+    const matchaNav = 'matcha-nav'
+    const matchaNavTheme = theme === 'dark' ? 'matcha-nav-dark' : null
+
+    const dropdownNav = 'dropdown-nav'
+    const dropdownNavTheme =  theme === 'dark' ? 'dropdown-nav-dark' : null
+
+    const navClasses = classNames(matchaNav, matchaNavTheme)
+    const dropdownClasses = classNames(dropdownNav, dropdownNavTheme)
 
     return (
-            <nav className={matchaNavTheme}>
+            <nav className={navClasses}>
                 
                 <span className="logo">
                     <img src="./images/logo-ex-2.svg"/>
@@ -28,7 +35,7 @@ export default function NavMenu({children}) {
                 <a href="#" onClick={toggleOpen}><i className="fa-solid fa-bars"></i></a>
                 {
                     open ? 
-                    <ul className={dropdownNavTheme}>
+                    <ul className={dropdownClasses}>
                         <a href="#" onClick={toggleOpen}><i className="fa-solid fa-xmark"></i></a>
                         <ul>
                             <li>home</li>
