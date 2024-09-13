@@ -1,6 +1,7 @@
 import React from "react"
 import { ThemeContext } from '/index.jsx'
 import classNames from "classnames"
+import uploadImage from '/images/easy-deployment.svg'
 
 
 export default function Card({ children, className }) {
@@ -12,7 +13,7 @@ export default function Card({ children, className }) {
     
     return (
         <div className={allClasses}>
-            <img src="./images/easy-deployment.svg" className="easy-deploy-img"/>
+            <img src={uploadImage} className="easy-deploy-img"/>
             {children}
         </div>
     )

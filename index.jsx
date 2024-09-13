@@ -9,6 +9,9 @@ import NavDropDown from './components/NavMenu/NavDropDown';
 import Banner from './components/Banner/index'
 import Footer from './components/Footer/index'  
 import classNames from 'classnames'
+import successImg from '/images/success.svg'
+import warningImg from '/images/warning.svg'
+import neutralImg from '/images/neutral.svg'
 
 const ThemeContext = React.createContext('light')
 
@@ -77,7 +80,7 @@ function App() {
           <h2 className={headerClass}>Matcha Banners</h2>
           <div className="component-container">
             <Banner>
-              <img src="./images/success.svg" />
+              <img src={successImg} />
               <Banner.Content>
                 <Banner.Title>Congratulations</Banner.Title>
                 <Banner.Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Body>
@@ -85,7 +88,7 @@ function App() {
             </Banner>
             
             <Banner className="neutral">
-              <img src="./images/warning.svg" />
+              <img src={warningImg} />
               <Banner.Content>
                 <Banner.Title>Attention</Banner.Title>
                 <Banner.Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Body>
@@ -93,7 +96,7 @@ function App() {
             </Banner>
             
             <Banner className="neutral">
-              <img src="./images/neutral.svg" />
+              <img src={neutralImg} />
               <Banner.Content>
                 <Banner.Title>Update Available</Banner.Title>
                 <Banner.Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Body>
@@ -107,12 +110,7 @@ function App() {
         
         <Footer>
           <Footer.Content className="footer-content">
-            <Footer.Logo>
-              <span className="footer-logo">
-                    <img src="./images/logo-ex-2.svg"/>
-                    logo
-              </span>
-            </Footer.Logo>
+            <Footer.Logo />
             <span className="footer-line"></span>
             <Footer.Pages>
               <li>About Us</li>

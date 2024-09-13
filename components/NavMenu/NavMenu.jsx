@@ -4,6 +4,7 @@ import NavDropDown from './NavDropDown'
 import NavItem from './NavItem'
 import { ThemeContext } from '/index.jsx'
 import classNames from 'classnames'
+import navLogo from '/images/logo-ex-2.svg'
 
 
 
@@ -28,7 +29,7 @@ export default function NavMenu({children}) {
             <nav className={navClasses}>
                 
                 <span className="logo">
-                    <img src="./images/logo-ex-2.svg"/>
+                    <img src={navLogo}/>
                     logo
                 </span>
                 {/* <p>toggle is {open ? 'ON' : 'OFF'}</p> */}
